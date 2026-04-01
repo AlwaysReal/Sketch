@@ -1,10 +1,13 @@
 const container = document.querySelector("#container");
 
-function makeDivs(numDivs){
-    for (let i = 0; i <= numDivs; i++){
-        let row = document.createElement("div");
-        container.appendChild(row);
+function makeDivs(gridSize){
+    const cellSize = 100 / gridSize
+
+    for (let i = 0; i < gridSize * gridSize; i++){
+        let cell = document.createElement("div");
+        cell.style.flex = `0 0 ${cellSize}%`;
+        container.appendChild(cell);
     }
 }
 
-makeDivs(256);
+makeDivs(16);
